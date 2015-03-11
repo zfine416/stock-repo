@@ -1,0 +1,13 @@
+<main class="gateway">
+  <h1>Log in</h1>
+
+  <%= form_for @user, as: :session, url: session_url do |f| %>
+    <%= f.text_field :email, placeholder: "email" %>
+    <br/>
+    <%= f.password_field :password, placeholder: "password" %>
+    <br/>
+
+    <%= f.submit "Log in" %>
+  <% end %>
+  <%= link_to "Register", new_user_url %>
+</main>
