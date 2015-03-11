@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   root 'sessions#new'
 
   get 'users/current/tweets' => 'tweets#tweets_for_current_user'
-
+  get '/users/:user_id/home' => "sessions#home"
   resources :users, except: [:index, :show]
   resource :session, only: [:new, :create, :destroy]
 
