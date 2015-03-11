@@ -19,7 +19,7 @@ StockCollection.prototype.create = function(stockData){
 		dataType: 'json',
 		data: {
 			stock: stockData
-		}
+		},
 		success: function(data){
 			stockCollection.add(data);
 		}

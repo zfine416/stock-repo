@@ -5,10 +5,13 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'sessions#new'
 
+
   get 'users/current/tweets' => 'tweets#tweets_for_current_user'
   get '/users/home' => "users#home"
+  get '/stocks' => 'stocks#index'
   resources :users, except: [:index, :show]
   resource :session, only: [:new, :create, :destroy]
+  resources :stocks, :only => [:index, :create, :update, :destroy]
 
   
 end

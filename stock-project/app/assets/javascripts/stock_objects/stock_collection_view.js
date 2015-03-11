@@ -1,7 +1,7 @@
 var StockCollectionView = function(collection){
 	this.collection = collection;
 	$(this.collection).on('change', this.render.bind(this));
-	vsar StockCollectionView = this;
+	var StockCollectionView = this;
 	$('#new_stock-form').on('submit', function(e){
 		e.preventDefault();
 
