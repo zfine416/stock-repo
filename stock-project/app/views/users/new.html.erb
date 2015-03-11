@@ -2,12 +2,14 @@
   <h1>Sign up</h1>
 
   <%= form_for @user do |f| %>
-    <%= f.text_field :email, placeholder: "email" %>
-    <br/>
-    <%= f.password_field :password, placeholder: "password" %>
-    <br/>
-    <%= f.password_field :password_confirmation, placeholder: "confirm password" %>
-    <br/>
-    <%= f.submit "Sign up" %>
+  <%= f.text_field :username, placeholder: "Desired Username" %>
+  <br/>
+  <%= f.text_field :email, placeholder: "email" %>
+  <br/>
+  <%= f.password_field :password, placeholder: "password" %>
+  <br/>
+  <%= f.password_field :password_confirmation, placeholder: "confirm password" %>
+  <br/>
+  <%= f.submit "Sign up" %>
   <% end %>
 </main>
