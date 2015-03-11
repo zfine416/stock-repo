@@ -28,11 +28,11 @@ Tweet.delete_all
 Tweet.create({
 	tweet_sender: "alphatweet",
 	tweet_text: "Rumor has it GE is in talks to acquire TSLA",
-	tweet_sent: 2015-03-10
+	tweet_sent: "2015-03-10"
 	})
 
 Tweet.create({
 	tweet_sender: "betatweet",
 	tweet_text: "Long PEP now!!!",
-	tweet_sent: 2015-03-11
+	tweet_sent: "2015-03-11"
 	})
