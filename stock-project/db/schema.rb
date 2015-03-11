@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20150311140405) do
     t.string   "email",           null: false
     t.string   "password_digest", null: false
     t.string   "session_token"
-    t.string   "favorite_stocks"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
