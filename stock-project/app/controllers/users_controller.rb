@@ -41,6 +41,10 @@ class UsersController < ApplicationController
 		end
 	end
 
+	def home
+		@user = current_user;
+	end
+
 	private
 
 	def user_params

@@ -8,7 +8,6 @@ class TweetsController < ApplicationController
     @stocks = Stock.find(params[:user_id])
     @stocks.each do |stock|
       tweet = Tweet.find(params[:stock_id])
-      puts tweet
     end
   end
 
