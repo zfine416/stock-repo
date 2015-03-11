@@ -6,7 +6,8 @@ class UsersController < ApplicationController
 			format.json {
 				render json: {
 					id: current_user.id,
-					email: current_user.email	
+					email: current_user.email,
+					username: current_user.username	
 				}
 			}
 		end
@@ -43,7 +44,7 @@ class UsersController < ApplicationController
 	private
 
 	def user_params
-		params.require(:user).permit(:email, :password, :password_confirmation)
+		params.require(:user).permit(:username, :email, :password, :password_confirmation)
 	end
 
 	def password_params
