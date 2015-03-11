@@ -9,10 +9,10 @@ class SessionsController < ApplicationController
 		@user = User.find_by(email: session_params[:email])
 		if @user && @user.authenticate(session_params[:password])
 		login!(@user)
-
-		# redirect_to 
+		Pry.start(binding)
+		redirect_to "users/#{current_user.id}/home"
 	else
-		# redirect_to
+		# redirect_to failed login
 	end
 
 	end
