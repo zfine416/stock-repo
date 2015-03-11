@@ -86,7 +86,11 @@ GEM
       coderay (~> 1.1.0)
       method_source (~> 0.8.1)
       slop (~> 3.4)
+<<<<<<< HEAD
     pry-rails (0.3.2)
+=======
+    pry-rails (0.3.3)
+>>>>>>> 9a7041258fbc154119c7e9c49b64ce5e131ab3d9
       pry (>= 0.9.10)
     rack (1.6.0)
     rack-test (0.6.3)
