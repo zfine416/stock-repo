@@ -2,15 +2,20 @@ class Stock < ActiveRecord::Base
   has_many :fav_stocks
   has_many :tweets
   has_many :users, through: :fav_stocks
+  validates :name, presence: true
+  before_validation :get_data_from_yahoo
 
-  # before_create :get_data_from_yahoo
+  def get_data_from_yahoo
+    data = YahooFinance.quotes([ticker], [:name,:symbol])
+    self.ticker= data[0].symbol.upcase
+    self.name = data[0].name
+    return true
+  end
 
-  # def get_data_from_yahoo
-  #   response = Net::HTTP.get "http://finance.yahoo.com/?token=#{asdf}&symbol=#{symbol}"
-  #   response_json = JSON.parse(response)
-  #   self.name = response_json["name"]
-  # end
-
+  def ticker=(new_ticker)
+    self[:ticker] = new_ticker.upcase
+  end
+ 
   def get_tweets
     consumer_key ||= OAuth::Consumer.new "LXJkKuXoRJzeyQzAx0TGoCZli", "yL3P69PF41OUObm2dPVFQujVKpxeNdtqwKMSAzSyHopA1VQOu4"
 access_token ||= OAuth::Token.new "3085560635-6gwFUx4pavCbblpFtlibvO4JYdFn6G5ugZk0nPi", "4AnySTXszbZOA9t74M0tIoH3Z0rbCvcsqnYwgz9VnQTg1"
@@ -28,13 +33,8 @@ access_token ||= OAuth::Token.new "3085560635-6gwFUx4pavCbblpFtlibvO4JYdFn6G5ugZ
     http.start
     response = http.request request
     JSON.parse(response.body).each do |tweet_hash|
-      self.tweets << Tweet.new(tweet_sender: tweet_hash["user"]["screen_name"] tweet_text: tweet["text"], tweet_sent: tweet["created_at"])
+      self.tweets << Tweet.new(tweet_sender: tweet_hash["user"]["screen_name"], tweet_text: tweet["text"], tweet_sent: tweet["created_at"])
     end
-
-  def get_data_from_yahoo
-    # response = Net::HTTP.get "http://finance.yahoo.com/?token=#{asdf}&symbol=#{symbol}"
-    # response_json = JSON.parse(response)
-    # self.name = response_json["name"]
   end
 
 end
