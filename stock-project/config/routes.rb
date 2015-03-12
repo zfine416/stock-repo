@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'sessions#new'
   get '/stocks' => "stocks#create"
+  get '/stocks/:ticker' => "stocks#show"
 
 
   get 'users/current/tweets' => 'tweets#tweets_for_current_user'

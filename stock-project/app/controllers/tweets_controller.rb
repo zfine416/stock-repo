@@ -6,5 +6,4 @@ class TweetsController < ApplicationController
       tweet = Tweet.find(params[:stock_id])
     end
   end
-
 end
