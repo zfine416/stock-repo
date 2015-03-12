@@ -10,29 +10,22 @@ Stock.delete_all
 
 Stock.create({
 	ticker: "GOOG",
-	name: "Google"
+	name: "Google",
+	earnings_per_share: "12",
+	pe_ratio: "1.2",
+	last_trade_price: "554.42",
+	volume: "14873921",
+	average_daily_volume: "3214",
+	change_in_percent: "1.42%"
+
 	})
 
-Stock.create({
-	ticker: "PEP",
-	name: "Pepsi"
-	})
-
-Stock.create({
-	ticker: "GE",
-	name: "General Electric"
-	})
 
 Tweet.delete_all
 
 Tweet.create({
 	tweet_sender: "alphatweet",
 	tweet_text: "Rumor has it GE is in talks to acquire TSLA",
+	ticker: "GOOG",
 	tweet_sent: "2015-03-10"
-	})
-
-Tweet.create({
-	tweet_sender: "betatweet",
-	tweet_text: "Long PEP now!!!",
-	tweet_sent: "2015-03-11"
 	})
