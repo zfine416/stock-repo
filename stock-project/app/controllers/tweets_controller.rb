@@ -1,6 +1,7 @@
 class TweetsController < ApplicationController
 
-  # def index
+  # def index 
+  #   Pry.start(binding)
   #   @tweets = Tweet.all
   # end
 
@@ -11,5 +12,6 @@ class TweetsController < ApplicationController
       puts tweet
     end
   end
+
 
 end
