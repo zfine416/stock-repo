@@ -6,9 +6,10 @@ class Stock < ActiveRecord::Base
   before_validation :get_data_from_yahoo
 
   def get_data_from_yahoo
-    data = YahooFinance.quotes([ticker], [:name,:symbol])
+    data = YahooFinance.quotes([ticker], [:name,:symbol,:ask])
     self.ticker= data[0].symbol.upcase
     self.name = data[0].name
+    self.ask = data[0].ask
     return true
   end
 
