@@ -2,8 +2,10 @@ var StockCollectionView = function(collection){
 	this.collection = collection;
 	$(this.collection).on('change', this.render.bind(this));
 	var StockCollectionView = this;
-	$('#new_stock-form').on('submit', function(e){
+	$('#new-stock-form').on('submit', function(e){
 		e.preventDefault();
+		console.log('1');
+	debugger
 
 		var stockData = this.elements;
 
