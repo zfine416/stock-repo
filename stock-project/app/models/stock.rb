@@ -1,4 +1,8 @@
 class Stock < ActiveRecord::Base
+  has_many :fav_stocks
+  has_many :tweets
+  has_many :users, through: :fav_stocks
+
   # before_create :get_data_from_yahoo
 
   # def get_data_from_yahoo
@@ -19,13 +23,6 @@ access_token ||= OAuth::Token.new "3085560635-6gwFUx4pavCbblpFtlibvO4JYdFn6G5ugZ
     http.use_ssl     = true
     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
 
-    # If you entered your credentials in the first
-    # exercise, no need to enter them again here. The
-    # ||= operator will only assign these values if
-    # they are not already set.
-    consumer_key ||= OAuth::Consumer.new "LXJkKuXoRJzeyQzAx0TGoCZli", "yL3P69PF41OUObm2dPVFQujVKpxeNdtqwKMSAzSyHopA1VQOu4"
-    access_token ||= OAuth::Token.new "3085560635-6gwFUx4pavCbblpFtlibvO4JYdFn6G5ugZk0nPi", "4AnySTXszbZOA9t74M0tIoH3Z0rbCvcsqnYwgz9VnQTg1"
-
     # Issue the request.
     request.oauth! http, consumer_key, access_token
     http.start
@@ -40,7 +37,4 @@ access_token ||= OAuth::Token.new "3085560635-6gwFUx4pavCbblpFtlibvO4JYdFn6G5ugZ
     # self.name = response_json["name"]
   end
 
-  has_many :fav_stocks
-  has_many :tweets
-  has_many :users, through: :fav_stocks
 end
