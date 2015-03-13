@@ -6,7 +6,7 @@ class StocksController < ApplicationController
 
   # <form "/stocks" method="POST">
   #  Symbol: <input type="text" name="stock[symbol]" />
-      <input type="submit">
+      # <input type="submit">
   # </form>
 
   def create
