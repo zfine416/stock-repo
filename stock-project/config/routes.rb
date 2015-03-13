@@ -11,9 +11,12 @@ Rails.application.routes.draw do
   get 'users/current/tweets' => 'tweets#tweets_for_current_user'
   get '/users/home' => "users#home"
   get '/stocks' => 'stocks#index'
+  post '/stocks/:ticker/favorite' => "stocks#favorite"  
+  delete '/stocks/:ticker/favorite' => "stocks#unfavorite"  
+  
   resources :users, except: [:index, :show]
   resource :session, only: [:new, :create, :destroy]
-  resources :stocks, :only => [:index, :create, :update, :destroy]
+  resources :stocks, :only => [:index, :create, :update, :destroy, :favorite]
 
   
 end

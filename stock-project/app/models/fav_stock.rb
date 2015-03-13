@@ -1,4 +1,4 @@
 class FavStock < ActiveRecord::Base
 	belongs_to :user
-	belongs_to :stocks
+	belongs_to :stock
 end

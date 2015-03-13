@@ -25,6 +25,7 @@ class Stock < ActiveRecord::Base
   end
 
   def save_to_favorites
+    
 
   end
 

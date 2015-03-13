@@ -1,8 +1,8 @@
-console.log('stocks.js loaded')
+// console.log('stocks.js loaded')
 
-$(function(){
-	stockCollection = new StockCollection();
-	stockCollectionView = new stockCollectionView(stockCollection);
+// $(function(){
+// 	stockCollection = new StockCollection();
+// 	stockCollectionView = new stockCollectionView(stockCollection);
 
-	stockCollection.fetch();
-})
+// 	stockCollection.fetch();
+// })
