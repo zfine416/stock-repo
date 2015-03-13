@@ -1,6 +1,11 @@
-<h1><%= @stock.name %></h1>
-<h4>Last: <%= @stock.last_trade_price %> Change: <%= @stock.change_in_percent %></h4>
-<ul>
+<<<<<<< HEAD
+<h1><%= @stock.name %><br><div class="word"><div class="favorite">  </div>Favorite</div></h1>
+=======
+<h1><%= @stock.name %><br><div class="word"><div class="favorite">  </div>Favorite</div></h1> 
+>>>>>>> c3340f65ccb3d90e5cdb694806817a88b323f8cf
+<ul class="stockinfo">
+  <li><h4>Last: <%= @stock.last_trade_price %> </h4></li>
+  <li><h4>Change: <%= @stock.change_in_percent %></h4></li>
   <li>EPS: <%= @stock.earnings_per_share %></li>
   <li>P/E: <%= @stock.pe_ratio %> </li>
   <li>Volume: <%= number_with_delimiter(@stock.volume, :delimiter => ',') %></li>

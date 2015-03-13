@@ -18,7 +18,7 @@
  $logo: white;
  *, *:before, *:after { box-sizing: border-box; }
 
- * {
+*{
   margin: 0;
   border: 0;
   padding: 0;
@@ -55,6 +55,10 @@ h1 {
 	}
 }
 
+.markets li{
+  display: inline;
+}
+
 nav.logged-in {
   width: 100%;
   border-bottom: 1px solid black;
@@ -69,7 +73,7 @@ nav.logged-in {
     line-height: 1em;
     color: $logo;
     transition:color 2s;
-  
+
   &:hover{
   	color:red;
   }
@@ -139,4 +143,27 @@ input[type='submit']{
       margin-top: 0.5em;
     }
   }
+}
+
+.stockinfo{
+	list-style-type: none;
+	margin-left: 2em;
+	color:green;
+}
+.favorited{
+	background-color: yellow;
+}
+.favorite{
+	width:1em;
+	height: 1em;
+	border-radius: 100%;
+	border: 2px solid black;
+	display: inline-block;
+	margin-bottom: -5px;
+}
+
+.word{
+	margin-bottom: -10px;
+	font-size: .75em;
+	padding-top: .5em;
 }
