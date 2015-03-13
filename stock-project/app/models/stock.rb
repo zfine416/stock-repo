@@ -1,5 +1,6 @@
 class Stock < ActiveRecord::Base
   has_many :fav_stocks
+  has_many :favorited_by, through: :fav_stocks, source: :user
   has_many :tweets
   has_many :users, through: :fav_stocks
   validates :name, presence: true
@@ -23,6 +24,10 @@ class Stock < ActiveRecord::Base
     self[:ticker] = new_ticker.upcase
   end
 
+  def save_to_favorites
+
+
+  end
 
 
   def get_tweets
