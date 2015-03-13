@@ -14,8 +14,9 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-
+$(function() {
 $('body').on('click', '.favorite', function(){
-	$(this).css('background-color', 'yellow');
+	$(this).toggleClass("favorited");
+});
 });
 
