@@ -1,30 +1,34 @@
-var StockView = function(model){
-	this.model = model;
-	this.$el = $('<li></li>');
-}
+$('body').on('click', '.favorite', function(){
+	$(this).css('background-color', 'yellow');
+});
 
-StockView.prototype.render = function(){
-	var StockView = this;
-	this.$el.html(this.template());
-	this.$el.on('click', '.delete', function(e){
-		$(StockView.model).trigger('destroy');
-	})
-	this.$el.on('submit', '.edit-stock-form',
-		function(e){
-			e.preventDefault();
+// var StockView = function(model){
+// 	this.model = model;
+// 	this.$el = $('<li></li>');
+// }
 
-			var stockData = this.elements;
+// StockView.prototype.render = function(){
+// 	var StockView = this;
+// 	this.$el.html(this.template());
+// 	this.$el.on('click', '.delete', function(e){
+// 		$(StockView.model).trigger('destroy');
+// 	})
+// 	this.$el.on('submit', '.edit-stock-form',
+// 		function(e){
+// 			e.preventDefault();
 
-			var updatedStockData = {
-				ticker: stockData.ticker.value,
-				name: stockData.name.value
-			}
-			$(StockView.model).trigger('update', updatedStockData)
-		})
-	return this;
-}
+// 			var stockData = this.elements;
 
-StockView.prototype.template = function(){
-	var compiledTemplate = Handlebars.templates['stock-view-template'];
-	return compiledTemplate(this.model);
-}
+// 			var updatedStockData = {
+// 				ticker: stockData.ticker.value,
+// 				name: stockData.name.value
+// 			}
+// 			$(StockView.model).trigger('update', updatedStockData)
+// 		})
+// 	return this;
+// }
+
+// StockView.prototype.template = function(){
+// 	var compiledTemplate = Handlebars.templates['stock-view-template'];
+// 	return compiledTemplate(this.model);
+// }

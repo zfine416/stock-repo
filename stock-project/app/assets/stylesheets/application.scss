@@ -18,7 +18,7 @@
  $logo: white;
  *, *:before, *:after { box-sizing: border-box; }
 
- * {
+*{
   margin: 0;
   border: 0;
   padding: 0;
@@ -143,4 +143,27 @@ input[type='submit']{
       margin-top: 0.5em;
     }
   }
+}
+
+.stockinfo{
+	list-style-type: none;
+	margin-left: 2em;
+	color:green;
+}
+.favorited{
+	background-color: yellow;
+}
+.favorite{
+	width:1em;
+	height: 1em;
+	border-radius: 100%;
+	border: 2px solid black;
+	display: inline-block;
+	margin-bottom: -5px;
+}
+
+.word{
+	margin-bottom: -10px;
+	font-size: .75em;
+	padding-top: .5em;
 }
