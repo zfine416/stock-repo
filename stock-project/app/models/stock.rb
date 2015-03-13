@@ -23,6 +23,9 @@ class Stock < ActiveRecord::Base
     self[:ticker] = new_ticker.upcase
   end
 
+  private def secrets
+    Rails.application.secrets
+  end
 
 
   def get_tweets
@@ -39,8 +42,8 @@ class Stock < ActiveRecord::Base
     http.use_ssl     = true
     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
 
-    consumer_key ||= OAuth::Consumer.new "LXJkKuXoRJzeyQzAx0TGoCZli", "yL3P69PF41OUObm2dPVFQujVKpxeNdtqwKMSAzSyHopA1VQOu4"
-    access_token ||= OAuth::Token.new "3085560635-6gwFUx4pavCbblpFtlibvO4JYdFn6G5ugZk0nPi", "4AnySTXszbZOA9t74M0tIoH3Z0rbCvcsqnYwgz9VnQTg1"
+    consumer_key ||= OAuth::Consumer.new secrets.twitter_consumer_key, secrets.twitter_consumer_secret
+    access_token ||= OAuth::Token.new secrets.twitter_access_token, secrets.twitter_access_token_secret
 
     # Issue the request
     request.oauth! http, consumer_key, access_token
@@ -66,9 +69,7 @@ class Stock < ActiveRecord::Base
       cache_tweets(tweets)
     end
     nil
-    binding.pry
+    puts response.code
   end
-
-
 
 end
