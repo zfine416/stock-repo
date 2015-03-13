@@ -6,3 +6,13 @@
   <li>Volume: <%= number_with_delimiter(@stock.volume, :delimiter => ',') %></li>
   <li>Avg Volume: <%= number_with_delimiter(@stock.average_daily_volume, :delimiter => ',') %></li>
 </ul>
+
+<table>
+  <% @tweets.each do |tweet| %>
+    <tr>
+      <td><%= tweet.tweet_sender %></td>
+      <td><%= tweet.tweet_text %></td>
+    </br>
+    </tr>
+  <% end %>
+</table>

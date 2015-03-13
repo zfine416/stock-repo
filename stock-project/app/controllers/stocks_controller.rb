@@ -11,6 +11,7 @@ class StocksController < ApplicationController
 
   def show
     @stock = Stock.find_by(ticker: params[:ticker])
+    @tweets = Tweet.where("ticker" => @stock.ticker)
     # binding.pry
   end
 end
