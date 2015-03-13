@@ -1,14 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>StockProject</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+	<title>StockProject</title>
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	<%= csrf_meta_tags %>
 </head>
 <body>
+	<% if current_user %>
+	<nav class="logged-in clearfix">
+		<div class="logo">
+			StockTweets
+		</div>
+		<ul class="clearfix">
+			<li>
+				<%= link_to "Change Password", edit_user_url(current_user) %>
+			</li>
+			<li>
+				<%= button_to "Log Out", session_url, method: "delete" %>
+			</li>
+		</ul>
+	</nav>
+	<% end %>
 
-<%= yield %>
+
+	<%= yield %>
 
 </body>
 </html>
