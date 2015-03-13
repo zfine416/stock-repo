@@ -1,10 +1,9 @@
 var StockCollectionView = function(collection){
 	this.collection = collection;
 	$(this.collection).on('change', this.render.bind(this));
-	var StockCollectionView = this;
+	var stockCollectionView = this;
 	$('#new-stock-form').on('submit', function(e){
 		e.preventDefault();
-		console.log('1');
 	debugger
 
 		var stockData = this.elements;
@@ -13,7 +12,7 @@ var StockCollectionView = function(collection){
 			ticker: stockData.ticker.value,
 			name: stockData.name.value
 		}
-		StockCollectionView.collection.create(newStockData)
+		stockCollectionView.collection.create(newStockData)
 	})
 }
 
@@ -22,9 +21,10 @@ StockCollectionView.prototype.$el = function(){
 }
 
 StockCollectionView.prototype.render = function(){
+	var $list = $('.stocks') 
 	this.$el.empty();
 	this.collection.models.forEach(function(model){
 		var newView = new StockView(model);
-		this.$el().append(newView.render().$el);
+		this.$list().append(newView.render());
 	}.bind(this))
 }

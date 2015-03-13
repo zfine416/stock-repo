@@ -1,4 +1,4 @@
-var Stocks = function(args){
+var Stock = function(args){
 	args = args || {},
 	this.id = args.id,
 	this.ticker = args.ticker,
