@@ -14,3 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+$('body').on('click', '.favorite', function(){
+	$(this).css('background-color', 'yellow');
+});
+
