@@ -12,6 +12,7 @@
 !/log/.keep
 /tmp
 /db/schema.rb
+/config/secrets.yml
 <<<<<<< HEAD
 /Gemfile.lock
 =======

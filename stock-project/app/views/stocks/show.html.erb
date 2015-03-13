@@ -8,6 +8,8 @@
   <li>Avg Volume: <%= number_with_delimiter(@stock.average_daily_volume, :delimiter => ',') %></li>
 </ul>
 
+    </br>
+    <input type="button" value="Save to Favorites">
 <table>
   <% @tweets.each do |tweet| %>
     <tr>
@@ -16,4 +18,5 @@
     </br>
     </tr>
   <% end %>
+
 </table>
