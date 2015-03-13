@@ -55,6 +55,10 @@ h1 {
 	}
 }
 
+.markets li{
+  display: inline;
+}
+
 nav.logged-in {
   width: 100%;
   border-bottom: 1px solid black;
@@ -69,7 +73,7 @@ nav.logged-in {
     line-height: 1em;
     color: $logo;
     transition:color 2s;
-  
+
   &:hover{
   	color:red;
   }

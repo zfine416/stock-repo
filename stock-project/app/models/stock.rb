@@ -47,6 +47,8 @@ class Stock < ActiveRecord::Base
     http.use_ssl     = true
     http.verify_mode = OpenSSL::SSL::VERIFY_PEER
 
+    # oAuth tokens should be in bash profile, setBash command must be run
+    # in same bash window as Rails server
     consumer_key ||= OAuth::Consumer.new secrets.twitter_consumer_key, secrets.twitter_consumer_secret
     access_token ||= OAuth::Token.new secrets.twitter_access_token, secrets.twitter_access_token_secret
 

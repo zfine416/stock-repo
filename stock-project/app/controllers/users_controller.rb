@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-	before_action :user_is_current_user, only: [:edit, :update] 
+	before_action :user_is_current_user, only: [:edit, :update]
 
 	def current
 		respond_to do |format|
@@ -7,7 +7,7 @@ class UsersController < ApplicationController
 				render json: {
 					id: current_user.id,
 					email: current_user.email,
-					username: current_user.username	
+					username: current_user.username
 				}
 			}
 		end
@@ -43,6 +43,9 @@ class UsersController < ApplicationController
 
 	def home
 		@user = current_user;
+		@sp = YahooFinance.quotes(["^GSPC"], [:name, :ticker, :last_trade_price, :change_in_percent])
+		@nq = YahooFinance.quotes(["^IXIC"], [:name, :ticker, :last_trade_price, :change_in_percent])
+		@tf = YahooFinance.quotes(["^RUT"], [:name, :ticker, :last_trade_price, :change_in_percent])
 	end
 
 	private
@@ -59,7 +62,7 @@ class UsersController < ApplicationController
 		user = User.find(params[:id])
 
 		if user
-			# redirect_to 
+			# redirect_to
 		else
 			redirect_to new_session_path
 		end
