@@ -5,7 +5,7 @@ class StocksController < ApplicationController
   def create
     @stock = Stock.find_or_initialize_by(ticker: params[:ticker].upcase)
     @stock.save
-    redirect_to "/stocks/#{@stock.ticker}" 
+    redirect_to "/stocks/#{@stock.ticker}"
   end
 
 
