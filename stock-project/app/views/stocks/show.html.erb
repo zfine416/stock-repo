@@ -1,27 +1,26 @@
-<<<<<<< HEAD
+
 <h1><%= @stock.name %><br><div class="word"><div class="favorite">  </div>Favorite</div></h1>
-=======
-<h1><%= @stock.name %><br><div class="word"><div class="favorite">  </div>Favorite</div></h1> 
->>>>>>> c3340f65ccb3d90e5cdb694806817a88b323f8cf
-<ul class="stockinfo">
-  <li><h4>Last: <%= @stock.last_trade_price %> </h4></li>
-  <li><h4>Change: <%= @stock.change_in_percent %></h4></li>
+
+<ul class="stockinfo col-md-2">
+  <li>Last: <%= @stock.last_trade_price %></li>
+  <li>Change: <%= @stock.change_in_percent %></li>
   <li>EPS: <%= @stock.earnings_per_share %></li>
   <li>P/E: <%= @stock.pe_ratio %> </li>
   <li>Volume: <%= number_with_delimiter(@stock.volume, :delimiter => ',') %></li>
   <li>Avg Volume: <%= number_with_delimiter(@stock.average_daily_volume, :delimiter => ',') %></li>
-</ul>
-  </br>
-  <%= link_to "Save to Favorites", "/stocks/#{@stock.ticker}/favorite", method: :post %>
-  <%= link_to "Remove from Favorites", "/stocks/#{@stock.ticker}/favorite", method: :delete %>
-  </br>
 
+</br>
+<%= link_to "Save to Favorites", "/stocks/#{@stock.ticker}/favorite", method: :post %>
+<br>
+<%= link_to "Remove from Favorites", "/stocks/#{@stock.ticker}/favorite", method: :delete %>
+</br>
+</ul>
 <table>
   <% @tweets.each do |tweet| %>
-    <tr>
-      <td><%= tweet.tweet_sender %></td>
-      <td><%= tweet.tweet_text %></td>
-    </tr>
+  <tr>
+    <td><%= tweet.tweet_sender %></td>
+    <td><%= tweet.tweet_text %></td>
+  </tr>
   <% end %>
 </table>
-    </br>
+</br>

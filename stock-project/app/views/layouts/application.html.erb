@@ -10,11 +10,11 @@
 	<% if current_user %>
 	<nav class="logged-in clearfix">
 		<div class="logo">
-			StockTweets
+		<%= link_to "StockTweets",  users_home_url %>
 		</div>
 		<ul class="clearfix">
 			<li>
-				<%= link_to "Change Password", edit_user_url(current_user) %>
+				<%= link_to "My Account (" + current_user.username + ")", edit_user_url(current_user) %>
 			</li>
 			<li>
 				<%= button_to "Log Out", session_url, method: "delete" %>

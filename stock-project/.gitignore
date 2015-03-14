@@ -13,8 +13,8 @@
 /tmp
 /db/schema.rb
 /config/secrets.yml
-<<<<<<< HEAD
 /Gemfile.lock
-=======
 /Gemfile.lock
->>>>>>> 5c22e55cea02dcabd67a295350d9e74d8d6fdc9e
+
+add config/secrets.yml
+

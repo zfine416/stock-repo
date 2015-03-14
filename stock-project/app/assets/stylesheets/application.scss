@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+@import "bootstrap-sprockets";
  $primary: #2C3244;
  $logo: white;
  *, *:before, *:after { box-sizing: border-box; }
@@ -49,21 +49,35 @@ h1 {
 	text-align: center;
 	padding: 10px;
 	border-radius: 1em;
+	color:white;
+	font-size: 1.5em;
 	input[type='text']{
+		color:black;
 		margin-bottom: .5em;
 		width: 4.5em;
+		border-radius: .5rem;
+	}
+	input[type='submit']{
+		text-shadow: 0 1px 2px rgba(0,0,0,0.5);
+		border-bottom: 2px solid grey;
+		border-radius: .5rem;
 	}
 }
-
-.markets li{
+.markets{
+	padding-top: 2em;
+	display: block;
+	margin: 0 auto;
+	width: 85%;
+	li{
   display: inline;
+	}
 }
 
 nav.logged-in {
   width: 100%;
   border-bottom: 1px solid black;
   background: $primary;
-  padding: 0.5em;
+  padding: 0.6em;
 
 
   .logo {
@@ -73,6 +87,7 @@ nav.logged-in {
     line-height: 1em;
     color: $logo;
     transition:color 2s;
+    padding-top: .25em;
 
   &:hover{
   	color:red;
@@ -145,10 +160,14 @@ input[type='submit']{
   }
 }
 
+.col-md-4{
+	background: grey;
+}
+
 .stockinfo{
 	list-style-type: none;
 	margin-left: 2em;
-	color:green;
+	color:$primary;
 }
 .favorited{
 	background-color: yellow;
@@ -167,3 +186,4 @@ input[type='submit']{
 	font-size: .75em;
 	padding-top: .5em;
 }
+@import "bootstrap";
