@@ -42,7 +42,8 @@ class UsersController < ApplicationController
 	end
 
 	def home
-		@user = current_user;
+		@user = current_user
+#		binding.pry
 		@sp = YahooFinance.quotes(["^GSPC"], [:name, :ticker, :last_trade_price, :change_in_percent])
 		@nq = YahooFinance.quotes(["^IXIC"], [:name, :ticker, :last_trade_price, :change_in_percent])
 		@tf = YahooFinance.quotes(["^RUT"], [:name, :ticker, :last_trade_price, :change_in_percent])

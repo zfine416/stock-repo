@@ -165,9 +165,15 @@ input[type='submit']{
 }
 
 .stockinfo{
+	margin-top: 2em;
 	list-style-type: none;
 	margin-left: 2em;
 	color:$primary;
+	background: grey;
+	height: 100%;
+	li{
+		padding-bottom: 1em;
+	}
 }
 .favorited{
 	background-color: yellow;
@@ -185,5 +191,12 @@ input[type='submit']{
 	margin-bottom: -10px;
 	font-size: .75em;
 	padding-top: .5em;
+}
+
+#tweets{
+	margin-top: 2em;
+	td{
+		padding-bottom: 1em;
+	}
 }
 @import "bootstrap";

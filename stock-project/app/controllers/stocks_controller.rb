@@ -4,7 +4,7 @@ class StocksController < ApplicationController
 
  def create
  	@stock = Stock.find_or_initialize_by(ticker: params[:ticker].upcase)
- 	@stock.save
+ 	@stock.save unless @stock.persisted?
  	redirect_to "/stocks/#{@stock.ticker}"
  end
 
