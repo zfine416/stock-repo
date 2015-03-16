@@ -23,7 +23,7 @@ Welcome to your HomePage
 <table>
   <% @user.favorites.each do |stock| %>
   <tr>
-    <td><a href="/stocks/msft"><%= stock.ticker %></a></td>
+    <td><%= link_to stock.name, "/stocks/"+(stock.ticker) %></a></td>
   </tr>
   <% end %>
 </table>
