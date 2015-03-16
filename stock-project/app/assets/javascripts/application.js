@@ -14,5 +14,20 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+function setCurrentStock (callbackFunction) {
+  $.ajax({
+    url: document.location,
+    dataType: 'json',
+    success: function (data) {
+       console.log(data)
+
+      if (callbackFunction) {
+        callbackFunction();
+      };
+    }
+  });
+};
+
+setCurrentStock();
 
 
