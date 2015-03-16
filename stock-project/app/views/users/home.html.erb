@@ -19,4 +19,13 @@ Welcome to your HomePage
 	<input type="submit">
 <% end %>
 </div>
+<div class="favorite_stocks">
+<table>
+  <% @user.favorites.each do |stock| %>
+  <tr>
+    <td><%= stock.name %></td>
+  </tr>
+  <% end %>
+</table>
+</div>
 <ul class='stocks'></ul>
