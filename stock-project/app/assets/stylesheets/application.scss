@@ -13,12 +13,12 @@
  *= require_tree .
  *= require_self
  */
-@import "bootstrap-sprockets";
+ @import "bootstrap-sprockets";
  $primary: #2C3244;
  $logo: white;
  *, *:before, *:after { box-sizing: border-box; }
 
-*{
+ *{
   margin: 0;
   border: 0;
   padding: 0;
@@ -69,15 +69,17 @@ h1 {
 	margin: 0 auto;
 	width: 85%;
 	li{
-  display: inline;
-	}
+    display: inline;
+  }
 }
 
 nav.logged-in {
   width: 100%;
   border-bottom: 1px solid black;
   background: $primary;
-  padding: 0.6em;
+  padding: 1em;
+  position: fixed;
+  top:0;
 
 
   .logo {
@@ -89,47 +91,47 @@ nav.logged-in {
     transition:color 2s;
     padding-top: .25em;
 
-  &:hover{
-  	color:red;
-  }
+    &:hover{
+     color:red;
+   }
+ }
+
+ a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
-  a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
-  }
+input {
+  background: inherit;
+  color: inherit;
+}
 
-  input {
-    background: inherit;
-    color: inherit;
-  }
+ul {
+  float: right;
+  list-style-type: none;
 
-  ul {
-    float: right;
-    list-style-type: none;
+  li {
+    float: left;
 
-    li {
-      float: left;
+    font-weight: 500;
+    background: darken($primary, 30%);
+    color: white;
 
-      font-weight: 500;
-      background: darken($primary, 30%);
-      color: white;
+    &:hover {
+      cursor: pointer;
+      background: darken($primary, 20%);
+    }
 
-      &:hover {
-        cursor: pointer;
-        background: darken($primary, 20%);
-      }
+    + li {
+      margin-left: 1em;
+    }
 
-      + li {
-        margin-left: 1em;
-      }
-
-      input, a {
-        padding: 0.5em 1em;
-      }
+    input, a {
+      padding: 0.5em 1em;
     }
   }
+}
 }
 input[type='submit']{
 	border: 1px solid black;
@@ -160,20 +162,22 @@ input[type='submit']{
   }
 }
 
-.col-md-4{
-	background: grey;
-}
-
 .stockinfo{
-	margin-top: 2em;
-	list-style-type: none;
-	margin-left: 2em;
-	color:$primary;
-	background: grey;
-	height: 100%;
-	li{
-		padding-bottom: 1em;
-	}
+  position: fixed;
+  margin-top: 2em;
+  list-style-type: none;
+  margin-left: 2em;
+  color:$primary;
+  background: lightgrey;
+  height: 100%;
+  width:15%;
+  margin: 0;
+  text-align: center;
+  margin-top: 5%;
+  padding-top: 6em;
+  li{
+    padding-bottom: 1.5em;
+  }
 }
 .favorited{
 	background-color: yellow;
@@ -193,10 +197,22 @@ input[type='submit']{
 	padding-top: .5em;
 }
 
-#tweets{
-	margin-top: 2em;
-	td{
-		padding-bottom: 1em;
-	}
+.twitter{
+  float:right;
+  /*margin-top: 2em;
+  margin-right: -10em;*/
+  width: 84%;
+  margin-left: 16%;
+  margin-top: 10%;
+  td{
+    padding-bottom: 1em;
+  }
 }
-@import "bootstrap";
+.stockname{
+ position: fixed;
+ left:10%;
+ width: 85%;
+ background: rgba(255,255,255,.7);
+ top:8.5%;
+ }
+ @import "bootstrap";
