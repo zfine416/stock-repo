@@ -40,7 +40,7 @@ class StocksController < ApplicationController
   name = @stock.name.split
   name.each do |word|
     word = word.downcase!
-    word.gsub!(/[^0-9A-Za-z]/, '')
+    # word.gsub!(/[^0-9A-Za-z]/, '')
   end
   ticker = @stock.ticker.downcase
 
