@@ -72,7 +72,6 @@ class StocksController < ApplicationController
     @cloud[word[0]] = size
   end
 
-
  	respond_to do |format|
  		format.html
  		format.json {r

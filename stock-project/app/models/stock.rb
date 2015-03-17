@@ -8,7 +8,8 @@ class Stock < ActiveRecord::Base
   before_validation :get_tweets
 
   def get_data_from_yahoo
-    if (updated_at.nil?) || (updated_at<30.seconds.ago)
+    # binding.pry
+    if (updated_at.nil?) || (updated_at < 20.seconds.ago)
       data = YahooFinance.quotes([ticker], [:name, :symbol, :earnings_per_share, :pe_ratio, :last_trade_price, :volume, :average_daily_volume, :change_in_percent])
       self.ticker= data[0].symbol.upcase
       self.name = data[0].name
@@ -18,7 +19,6 @@ class Stock < ActiveRecord::Base
       self.volume = data[0].volume
       self.average_daily_volume = data[0].average_daily_volume
       self.change_in_percent = data[0].change_in_percent
-      return true
     end
   end
 
@@ -85,5 +85,4 @@ def get_tweets
     nil
     puts response.code
   end
-
 end
