@@ -36,8 +36,8 @@ gem 'json'
 
 gem 'yahoo-finance', require: 'yahoo_finance'
 
-#For Heroku
-gem 'rails_12factor', group: :production
+# #For Heroku
+# gem 'rails_12factor', group: :production
 
 
 # Use Unicorn as the app server
