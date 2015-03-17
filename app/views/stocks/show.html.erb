@@ -16,6 +16,15 @@
 <p><%= notice %></p>
 </br>
 </ul>
+
+<p>
+  <ul class="tweet_cloud">
+    <% @cloud.each do |word, size| %>
+        <li style="font-size:<%= size %>px"><%= word %> </li>
+    <% end %>
+  </ul>
+</p>
+
 <table id = "tweets" class = "twitter">
   <% @tweets.each do |tweet| %>
   <tr>
@@ -25,11 +34,3 @@
   <% end %>
 </table>
 </br>
-
-<p>
-  <ul class="tweet_cloud">
-    <% @cloud.each do |word, size| %>
-        <li style="font-size:<%= size %>px"><%= word %> </li>
-    <% end %>
-  </ul>
-</p>
