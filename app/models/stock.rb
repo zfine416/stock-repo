@@ -31,12 +31,15 @@ class Stock < ActiveRecord::Base
 
   end
 
-  private def secrets
+  private 
+
+  def secrets
   Rails.application.secrets
-end
+  end
 
+  public
 
-def get_tweets
+  def get_tweets
     puts "got tweet"
     # Create query
     baseurl = "https://api.twitter.com"
