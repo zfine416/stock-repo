@@ -25,3 +25,12 @@
   <% end %>
 </table>
 </br>
+
+<p>
+  <ul class="tweet_cloud">
+    <% @cloud.each do |word, size| %>
+        <li display="inline"><%= word %></li>
+        <% puts word %>
+    <% end %>
+  </ul>
+</p>

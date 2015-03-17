@@ -206,6 +206,22 @@ input[type='submit']{
     padding-bottom: 1em;
   }
 }
+
+.tweet_cloud{
+  float:right;
+  /*margin-top: 2em;
+  margin-right: -10em;*/
+  width: 84%;
+  margin-left: 16%;
+  margin-top: 10%;
+  li{
+    padding-bottom: 1em;
+    display: inline;
+  }
+}
+
+
+
 .stockname{
  position: fixed;
  left:10%;
