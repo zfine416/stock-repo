@@ -28,8 +28,8 @@
 <p>
   <ul class="tweet_cloud">
     <% @cloud.each do |word, size| %>
-        <li display="inline"><%= word %></li>
-        <% puts word %>
+        <li style="font-size:<%= size %>px"><%= word %></li>
+        <% puts size %>
     <% end %>
   </ul>
 </p>
