@@ -26,8 +26,6 @@ class StocksController < ApplicationController
  	@stock.get_data_from_yahoo
  	@stock.save! if @stock.changed?
  	@tweets = Tweet.where("ticker" => @stock.ticker)
-<<<<<<< HEAD
-=======
 
   # generate text from tweet contents
   text = " "
@@ -62,8 +60,6 @@ class StocksController < ApplicationController
     @cloud[word[0]] = size
   end
 
-
->>>>>>> cc21620df27a547b41a920f30680ba7fee19e583
  	respond_to do |format|
  		format.html
  		format.json {

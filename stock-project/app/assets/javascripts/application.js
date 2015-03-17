@@ -16,7 +16,7 @@
 //= require_tree .
 
 $(document).ready(function () {
-  $('.active-links').click(function () {
+  $('#sign-in').click(function () {
     //Conditional states allow the dropdown box appear and disappear 
     if ($('#signin-dropdown').is(":visible")) {
       $('#signin-dropdown').hide()
