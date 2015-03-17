@@ -31,7 +31,7 @@ class Stock < ActiveRecord::Base
 
   end
 
-  private 
+  private
 
   def secrets
   Rails.application.secrets
@@ -44,7 +44,7 @@ class Stock < ActiveRecord::Base
     # Create query
     baseurl = "https://api.twitter.com"
     path    = "/1.1/search/tweets.json"
-    query = URI.encode_www_form("q" => "$#{self.ticker}", "count" => 50)
+    query = URI.encode_www_form("q" => "$#{self.ticker}", "count" => 100)
 
     address = URI("#{baseurl}#{path}?#{query}")
     request = Net::HTTP::Get.new address.request_uri
@@ -88,4 +88,5 @@ class Stock < ActiveRecord::Base
     nil
     puts response.code
   end
+
 end
