@@ -1,35 +1,25 @@
-<div id="top-stuff">
-	<div id="top-bar-out">
-		<div id="container">
-			<div id="topnav">
-				<div class="active-links">
-					<div id="session">
-						<a id="signin-link" href="#">
-							<em>Have an account?</em>
-							<strong>Sign in</strong>
-						</a>
-					</div>
-					<div id="signin-dropdown">
-					<%= form_for @user, as: :session, url: session_url, html: { class: "signin"} do |f| %>
-						<%= f.text_field :email, placeholder: "email" %>
-						<br/>
-						<%= f.password_field :password, placeholder: "password" %>
-						<br/>
 
-						<%= f.submit "Log in" %>
-						<%= link_to "Register", new_user_url %>
-						<% end %>
-					</div>
-				</div>
-			</div>
-		</div>
+<nav class="logged-in clearfix">
+	<div class="logo">
+		<%= link_to "StockTweets",  "/session/new" %>
 	</div>
+	<ul class="clearfix">
+		<li id="sign-in">Sign In</li>
+		<li><a href="/users/new">Register</a></li>
+	</ul>
+</nav>
+<div id="signin-dropdown">
+	<%= form_for @user, as: :session, url: session_url, html: { class: "signin"} do |f| %>
+	<fieldset class="textbox">
+		<%= f.text_field :email, placeholder: "email" %>
+		<br/>
+		<%= f.password_field :password, placeholder: "password" %>
+		<br/>
+	</fieldset>
+	<%= f.submit "Log in" %>
+	<br>
+	<%= link_to "Sign Up", new_user_url %>
+	<% end %>
 </div>
+<h2 class="home">Boost Returns | Real Time Tweets On Stocks</h2>
 
-
-<!-- <main class="gateway">
-  <h1>Log in</h1>
-
-  <!--    -->
-  
-</main> -->

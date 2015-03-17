@@ -10,6 +10,7 @@
   <br/>
   <%= f.password_field :password_confirmation, placeholder: "confirm password" %>
   <br/>
-  <%= f.submit "Sign up" %>
+  <%= f.submit "Sign up" , :class => "clearfix"%>
+  <p><%= notice %></p>
   <% end %>
 </main>

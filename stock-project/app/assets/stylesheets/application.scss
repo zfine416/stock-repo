@@ -63,6 +63,12 @@ h1 {
 		border-radius: .5rem;
 	}
 }
+
+.new-sub{
+  float:left;
+  margin-left:40px;
+}
+
 .markets{
 	padding-top: 2em;
 	display: block;
@@ -220,8 +226,6 @@ input[type='submit']{
   }
 }
 
-
-
 .stockname{
  position: fixed;
  left:10%;
@@ -229,4 +233,5 @@ input[type='submit']{
  background: rgba(255,255,255,.7);
  top:8.5%;
  }
+
  @import "bootstrap";
