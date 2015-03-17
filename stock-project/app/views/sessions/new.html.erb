@@ -1,14 +1,35 @@
-<main class="gateway">
+<div id="top-stuff">
+	<div id="top-bar-out">
+		<div id="container">
+			<div id="topnav">
+				<div class="active-links">
+					<div id="session">
+						<a id="signin-link" href="#">
+							<em>Have an account?</em>
+							<strong>Sign in</strong>
+						</a>
+					</div>
+					<div id="signin-dropdown">
+					<%= form_for @user, as: :session, url: session_url, html: { class: "signin"} do |f| %>
+						<%= f.text_field :email, placeholder: "email" %>
+						<br/>
+						<%= f.password_field :password, placeholder: "password" %>
+						<br/>
+
+						<%= f.submit "Log in" %>
+						<%= link_to "Register", new_user_url %>
+						<% end %>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!-- <main class="gateway">
   <h1>Log in</h1>
 
-  <%= form_for @user, as: :session, url: session_url do |f| %>
-    <%= f.text_field :email, placeholder: "email" %>
-    <br/>
-    <%= f.password_field :password, placeholder: "password" %>
-    <br/>
-
-    <%= f.submit "Log in" %>
-    <%= link_to "Register", new_user_url %>
-  <% end %>
+  <!--    -->
   
-</main>
+</main> -->

@@ -1,4 +1,4 @@
-<p><%= notice %></p>
+
 <h1 class="stockname"><%= @stock.name %></h1>
 
 <ul class="stockinfo">
@@ -13,6 +13,7 @@
 <%= link_to "Save to Favorites", "/stocks/#{@stock.ticker}/favorite", method: :post %>
 <br>
 <%= link_to "Remove from Favorites", "/stocks/#{@stock.ticker}/favorite", method: :delete %>
+<p><%= notice %></p>
 </br>
 </ul>
 <table id = "tweets" class = "twitter">

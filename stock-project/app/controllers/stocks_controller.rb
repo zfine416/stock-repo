@@ -26,7 +26,6 @@ class StocksController < ApplicationController
  	@stock.get_data_from_yahoo
  	@stock.save! if @stock.changed?
  	@tweets = Tweet.where("ticker" => @stock.ticker)
-
  	respond_to do |format|
  		format.html
  		format.json { 
