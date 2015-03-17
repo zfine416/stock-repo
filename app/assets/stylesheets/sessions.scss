@@ -242,4 +242,27 @@ input[type='submit']{
 	float: right;
 	margin-right: 5px;
 }
+.stocksub{
+	color: black;
+	padding-left: 3px;
+	padding-right: 3px;
+}
+#new_session{
+
+	input[type='submit']{
+		width: 90%;
+		height: 2em;
+		position: absolute;
+		right: 10px;
+
+	}
+
+}
+.buttonnew{
+	background: $primary;
+	position: absolute;
+	right: 39.5%;
+	top:50%;
+	color:white;
+}
 /*this is a comment*/

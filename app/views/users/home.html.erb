@@ -15,8 +15,7 @@ Welcome to your HomePage
 <div class="ticker">
 <%= form_tag "/stocks", method: "POST" do %>
 	Enter A Ticker Symbol:<input type="text" name="ticker"></input>
-	<br>
-	<input type="submit">
+	<input class="stocksub" type="submit">
 <% end %>
 </div>
 <div class="favorite_stocks">
