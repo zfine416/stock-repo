@@ -34,14 +34,13 @@ class StocksController < ApplicationController
   end
 
   # generate word list from block of text
-
   counts = Hash.new 0
   words = text.split(/\W+/)
 
   words.each do |word|
     word.downcase!
     counts[word] += 1 if (word.length > 2 && word != (
-     @stock.ticker || "the" || "http"))
+     @stock.ticker || "the" || "and" || "http"))
   end
 
   # count and arrange words by frequency, find min and max
