@@ -22,7 +22,7 @@ class UsersController < ApplicationController
 		if @user.save
 			redirect_to new_session_url
 		else
-			binding.pry
+			# binding.pry
 			render :new, notice: "#{@user.email} is not a valid email"
 		end
 	end
