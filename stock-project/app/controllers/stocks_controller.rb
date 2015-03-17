@@ -34,32 +34,35 @@ class StocksController < ApplicationController
   end
 
   # generate word list from block of text
-  stop_words_csv =   "i,me,my,myself,we,our,ours,ourselves,you,your,yours,yourself,yourselves,he,him,his,himself,she,her,hers,herself,it,its,itself,they,them,their,theirs,themselves,what,which,who,whom,this,that,these,those,am,is,are,was,were,be,been,being,have,has,had,having,do,does,did,doing,would,should,could,ought,i'm,you're,he's,she's,it's,we're,they're,i've,you've,we've,they've,i'd,you'd,he'd,she'd,we'd,they'd,i'll,you'll,he'll,she'll,we'll,they'll,isn't,aren't,wasn't,weren't,hasn't,haven't,hadn't,doesn't,don't,didn't,won't,wouldn't,shan't,shouldn't,can't,cannot,couldn't,mustn't,let's,that's,who's,what's,here's,there's,when's,where's,why's,how's,a,an,the,and,but,if,or,because,as,until,while,of,at,by,for,with,about,against,between,into,through,during,before,after,above,below,to,from,up,down,in,out,on,off,over,under,again,further,then,once,here,there,when,where,why,how,all,any,both,each,few,more,most,other,some,such,no,nor,not,only,own,same,so,than,too,very,also,tco"
+  stop_words_csv =   "i,me,my,myself,we,our,ours,ourselves,you,your,yours,yourself,yourselves,he,him,his,himself,she,her,hers,herself,it,its,itself,they,them,their,theirs,themselves,what,which,who,whom,this,that,these,those,am,is,are,was,were,be,been,being,have,has,had,having,do,does,did,doing,would,should,could,ought,i'm,you're,he's,she's,it's,we're,they're,i've,you've,we've,they've,i'd,you'd,he'd,she'd,we'd,they'd,i'll,you'll,he'll,she'll,we'll,they'll,isn't,aren't,wasn't,weren't,hasn't,haven't,hadn't,doesn't,don't,didn't,won't,wouldn't,shan't,shouldn't,can't,cannot,couldn't,mustn't,let's,that's,who's,what's,here's,there's,when's,where's,why's,how's,a,an,the,and,but,if,or,because,as,until,while,of,at,by,for,with,about,against,between,into,through,during,before,after,above,below,to,from,up,down,in,out,on,off,over,under,again,further,then,once,here,there,when,where,why,how,all,any,both,each,few,more,most,other,some,such,no,nor,not,only,own,same,so,than,too,very,also,tco,http,https"
   stopwords = stop_words_csv.split(",")
-  stopwords << "http"
-  stopwords << "https"
-  name = @stock.name
-  name_words = name.split(" ")
-  # name_words.each |word| do
-  #   stopwords << word
-  # end
-
-  stopwords << (@stock.ticker).to_s
+  name = @stock.name.split.downcase
 
   counts = Hash.new 0
-  words = text.split(/\W+/)
+  words = text.split #(/\W+/)
 
   words.each do |word|
     word.downcase!
-    counts[word] += 1 if (!stopwords.include? word)
-  end
+    counts[word] += 1 if (
+    (!stopwords.include? word)  &&
+    (!name.include? word) &&
+    (word.length > 2) &&
+    !(word.include? "http") &&
+    !(word.include? "#{@stock.ticker.downcase}") &&
+    !(word.start_with?("@"))
+    # (word.to_i.to_s == word)
 
+    )
+  end
+  puts @stock.ticker.downcase
 
   # count and arrange words by frequency, find min and max
   words_by_freq = counts.sort_by {| key, value | -value }
+  words_by_freq = words_by_freq.take(200)
   max_freq = words_by_freq.first
   min_freq = words_by_freq.last
   words_by_freq = words_by_freq.to_h
+  puts words_by_freq.count
 
   # create hash with font-sizes for cloud
   max_font = 140
@@ -74,7 +77,7 @@ class StocksController < ApplicationController
 
  	respond_to do |format|
  		format.html
- 		format.json {r
+ 		format.json {
  			render json: {
  				id: @stock.id,
  				ticker: @stock.ticker,
