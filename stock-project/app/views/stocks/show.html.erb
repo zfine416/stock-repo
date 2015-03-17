@@ -1,7 +1,7 @@
 <p><%= notice %></p>
-<h1><%= @stock.name %></h1>
+<h1 class="stockname"><%= @stock.name %></h1>
 
-<ul class="stockinfo col-md-2">
+<ul class="stockinfo">
   <li>Last: <%= @stock.last_trade_price %></li>
   <li>Change: <%= @stock.change_in_percent %></li>
   <li>EPS: <%= @stock.earnings_per_share %></li>
@@ -15,7 +15,7 @@
 <%= link_to "Remove from Favorites", "/stocks/#{@stock.ticker}/favorite", method: :delete %>
 </br>
 </ul>
-<table id = "tweets">
+<table id = "tweets" class = "twitter">
   <% @tweets.each do |tweet| %>
   <tr>
     <td><%= tweet.tweet_sender %></td>
