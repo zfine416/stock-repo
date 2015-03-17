@@ -41,7 +41,7 @@ def get_tweets
     # Create query
     baseurl = "https://api.twitter.com"
     path    = "/1.1/search/tweets.json"
-    query = URI.encode_www_form("q" => "$#{self.ticker}", "count" => 7)
+    query = URI.encode_www_form("q" => "$#{self.ticker}", "count" => 50)
 
     address = URI("#{baseurl}#{path}?#{query}")
     request = Net::HTTP::Get.new address.request_uri
