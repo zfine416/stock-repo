@@ -18,11 +18,14 @@ Welcome to your HomePage
 	<input class="stocksub" type="submit">
 <% end %>
 </div>
+<h3 class="favorited_stocks">My Favorite Stocks</h3>
 <div class="favorite_stocks">
-<table>
+<table>	
+	<tr><td>Stock Name</td><td>Daily Change In Price</td></tr>
   <% @user.favorites.each do |stock| %>
   <tr>
     <td><%= link_to stock.name, "/stocks/"+(stock.ticker) %></a></td>
+    <td><%= stock.change_in_percent %></a></td>
   </tr>
   <% end %>
 </table>

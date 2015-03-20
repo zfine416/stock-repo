@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
 
 	def new
 		@user = User.new
+		@font = Random.rand(85)+15
 	end
 
 	def create
