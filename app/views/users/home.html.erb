@@ -13,7 +13,7 @@ Welcome to your HomePage
 	<input type="submit">
 </form> -->
 <div class="ticker">
-<%= form_tag "/stocks", method: "POST" do %>
+<%= form_tag "/stocks", class: 'stock-input', method: "POST" do %>
 	Enter A Ticker Symbol:<input type="text" name="ticker"></input>
 	<input class="stocksub" type="submit">
 <% end %>

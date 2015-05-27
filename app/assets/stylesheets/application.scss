@@ -47,12 +47,14 @@ h1 {
 	background:$primary;
 	margin: 0 auto;
 	display: block;
-	width: 37%;
+	width: 40%;
+  height: 60px;
 	text-align: center;
 	padding: 10px;
 	border-radius: 1em;
 	color:white;
 	font-size: 1.5em;
+  position: relative;
 	input[type='text']{
 		color:black;
 		margin-bottom: .5em;
@@ -88,6 +90,7 @@ nav.logged-in {
   padding: 1em;
   position: fixed;
   top:0;
+  height: 75px;
 
 
   .logo {
@@ -147,24 +150,35 @@ input[type='submit']{
 	cursor: pointer;
 
 }
+
+.stock-input{
+  position: absolute;
+  width: 400px;
+  bottom: 7.5px;
+  left: 50px;
+
+}
 .favorited_stocks{
   text-align:center;
 }
 .gateway {
   form {
     width: 50%;
-    margin: 1em auto;
+    margin: -5px auto;
     border: 1px solid black;
     background: $primary;
-    padding: 5px;
+    padding: 25px;
+    position: relative;
+    border-radius: 0 0 5px 5px;
 
     input {
       display: block;
       text-align: center;
       outline: none;
       margin: 0 auto;
-      width: 20em;
+      width: 50%;
       padding: 0.5em 1em;
+      border-radius: 5px;
     }
 
     br + input {
@@ -182,7 +196,7 @@ input[type='submit']{
   width:15%;
   margin: 0;
   text-align: center;
-  top: 11.5%;
+  top: 75px;
   padding-top: 6em;
   li{
     padding-bottom: 1.5em;
@@ -228,11 +242,9 @@ input[type='submit']{
 
 .tweet_cloud{
   float:right;
-  /*margin-top: 2em;
-  margin-right: -10em;*/
   width: 84%;
   margin-left: 16%;
-  margin-top: 10%;
+  margin-top: 10.5%;
   line-height: 120%;
   li{
     display: inline;
@@ -241,10 +253,11 @@ input[type='submit']{
 
 .stockname{
  position: fixed;
- left:10%;
- width: 85%;
- background: rgba(255,255,255,.7);
- top:8.5%;
- }
+ left: 15%;
+ width: 100%;
+ background: rgba(255,255,255,.9);
+ top:55px;
+ z-index: 1;
+}
 
- @import "bootstrap";
+@import "bootstrap";
