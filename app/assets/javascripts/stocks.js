@@ -12,8 +12,8 @@ $(document).ready(function () {
 })
 
 var moveCloud = function(){
-	var cloud = $(".cloud");
-	$(cloud).animate({"left": $( window ).width()-460}, 12000, function(){cloud.css("left", -460); moveCloud()});
+	var cloud = $("#cloud");
+	$(cloud).animate({"left": $( window ).width()}, 12000, function(){cloud.css("left", -350); moveCloud()});
 
 }
 
