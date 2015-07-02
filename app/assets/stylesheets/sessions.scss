@@ -53,6 +53,9 @@ font: 13px Arial, Helvetica, sans-serif;
 	height: 20%;
 	bottom: 0;
 }
+.welcome{
+	z-index:1;
+}
 .home{
 	font-size: 3em;
 	color: $primary;
@@ -60,20 +63,21 @@ font: 13px Arial, Helvetica, sans-serif;
 	position: absolute;
 	width: 850px;
 	left: calc(50% - 425px);
-	top: calc(50% - 1.5em);
+	top: calc(45% - 23px);
 }
 
 .information{
 	position: absolute;
 	font: 1.5em;
 	color: $primary;
-	width:50%;
-	left: calc(50% - 326.5px);
-	top: 50%;
+	width:400px;
+	left: calc(50% - 200px);
+	top: 55%;
 	text-align:center;
 }
 .white{
 	color:white;
+	text-shadow: 1.5px 1.5px grey;
 }
 
 #cloud {
