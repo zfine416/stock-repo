@@ -79,7 +79,16 @@ font: 13px Arial, Helvetica, sans-serif;
 	color:white;
 	text-shadow: 1.5px 1.5px grey;
 }
-
+.rec{
+	color:white;
+	z-index: 1;
+	position: absolute;
+	bottom: 20%;
+	right: 10px;
+	background: brown;
+	text-align: center;
+	line-height: 30px;
+}
 #cloud {
 	width: 350px; height: 90px;
 

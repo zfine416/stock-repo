@@ -5,8 +5,8 @@
 // 	stockCollection = new StockCollection();
 // 	stockCollectionView = new stockCollectionView(stockCollection);
 
-var $info = $('information');
-
+var $info = $('.information');
+var $button = $('.stocksub')
 $(document).ready(function () {
 	console.log("test1");
 	moveCloud();
@@ -18,26 +18,8 @@ $(document).load(function(){
 	$info.css('left', '440px');
 })
 
-
-
-
-
-var moveCloud = function(){
+function moveCloud(){
 	var cloud = $("#cloud");
 	$(cloud).animate({"left": $( window ).width()}, 12000, function(){cloud.css("left", -350); moveCloud()});
 
 }
-
-
-
-
-
-
-// console.log('stocks.js loaded')
-
-// $(function(){
-// 	stockCollection = new StockCollection();
-// 	stockCollectionView = new stockCollectionView(stockCollection);
-
-// 	stockCollection.fetch();
-// })

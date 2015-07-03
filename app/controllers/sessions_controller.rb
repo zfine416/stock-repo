@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-	# before_action :require_current_user, only: :destroy
+	before_action :require_current_user, only: :destroy
 
 	def new
 		@user = User.new
